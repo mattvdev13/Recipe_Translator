@@ -14,6 +14,9 @@
 		C9CAF20229ABEE93009D1865 /* Recipe_translatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAF20129ABEE93009D1865 /* Recipe_translatorTests.swift */; };
 		C9CAF20C29ABEE93009D1865 /* Recipe_translatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAF20B29ABEE93009D1865 /* Recipe_translatorUITests.swift */; };
 		C9CAF20E29ABEE93009D1865 /* Recipe_translatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAF20D29ABEE93009D1865 /* Recipe_translatorUITestsLaunchTests.swift */; };
+		C9FA218B29ABFF460060849E /* TodayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA218A29ABFF460060849E /* TodayError.swift */; };
+		C9FA218D29ABFF8B0060849E /* EKeventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA218C29ABFF8B0060849E /* EKeventStore.swift */; };
+		C9FA218F29ABFFDF0060849E /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA218E29ABFFDF0060849E /* ReminderStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		C9CAF20729ABEE93009D1865 /* Recipe_translatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Recipe_translatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAF20B29ABEE93009D1865 /* Recipe_translatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_translatorUITests.swift; sourceTree = "<group>"; };
 		C9CAF20D29ABEE93009D1865 /* Recipe_translatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_translatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9FA218A29ABFF460060849E /* TodayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayError.swift; sourceTree = "<group>"; };
+		C9FA218C29ABFF8B0060849E /* EKeventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKeventStore.swift; sourceTree = "<group>"; };
+		C9FA218E29ABFFDF0060849E /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,12 @@
 			children = (
 				C9CAF1EF29ABEE92009D1865 /* Recipe_translatorApp.swift */,
 				C9CAF1F129ABEE92009D1865 /* ContentView.swift */,
+				C9FA218A29ABFF460060849E /* TodayError.swift */,
 				C9CAF1F329ABEE93009D1865 /* Assets.xcassets */,
 				C9CAF1F529ABEE93009D1865 /* Recipe_translator.entitlements */,
 				C9CAF1F629ABEE93009D1865 /* Preview Content */,
+				C9FA218C29ABFF8B0060849E /* EKeventStore.swift */,
+				C9FA218E29ABFFDF0060849E /* ReminderStore.swift */,
 			);
 			path = Recipe_translator;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FA218D29ABFF8B0060849E /* EKeventStore.swift in Sources */,
+				C9FA218B29ABFF460060849E /* TodayError.swift in Sources */,
 				C9CAF1F229ABEE92009D1865 /* ContentView.swift in Sources */,
 				C9CAF1F029ABEE92009D1865 /* Recipe_translatorApp.swift in Sources */,
+				C9FA218F29ABFFDF0060849E /* ReminderStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,6 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -535,10 +549,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Superposition.Recipe-translatorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = Recipe_translator;
 			};
 			name = Debug;
@@ -556,10 +572,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Superposition.Recipe-translatorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = Recipe_translator;
 			};
 			name = Release;
